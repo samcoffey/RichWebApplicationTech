@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Standard form</title>
+	<script src="week5ex1.js"></script>
+</head>
+<body>
+	<form name="myForm" method="post" onsubmit="return validateForm();">
+		Name:<input type="text" name="name" id="name"><br>
+		Age:<input type="text" list="age" name="agelist" id="agelist"><br>
+		<datalist id="age">
+			<option value="0-18">
+			<option value="18-30">
+			<option value="30-45">
+			<option value="45-60">
+			<option value="60+">
+		</datalist>
+		Gender:
+		<input type="radio" name="gender" id="male" value="male"/>
+		<label for="male"> Male</label> 
+		<input type="radio" name="gender" id="female" value="female"/>
+		<label for="female"> Female</label> <br>
+		<input type="checkbox" name="terms_and_conditions"
+			id="terms_and_conditions">I accept the terms and conditions<br>
+		<input type="submit" value="Submit">
+
+	</form>
+</body>
+</html>

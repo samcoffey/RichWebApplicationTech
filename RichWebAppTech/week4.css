@@ -1,0 +1,75 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;
+}
+
+body {
+	font-size: 0.875em;
+	color: #252525;
+	/* Safari and Google Chrome */
+	background: -webkit-linear-gradient(top, #FFFFFF 50px, #F6F6F6 100px);
+	
+	/* Firefox */
+	background: -moz-linear-gradient(top, #FFFFFF 50px, #F6F6F6 100px);
+	
+	/* Opera */
+	background: -o-linear-gradient(top, #FFFFFF 50px, #F6F6F6 100px);
+	
+	/* Internet Explorer */
+	background: -ms-linear-gradient(top, #FFFFFF 50px, #F6F6F6 100px);
+	
+	/* W3C Standard */
+	background: gold linear-gradient(to bottom, #FFFFFF 50px, #F6F6F6 100px);
+}
+
+.ambox {
+	margin: 0 10%;
+	border: 1px solid #aaa;
+	border-left: 10px solid #F4C430;
+	background: #fbfbfb
+}
+
+.question {
+	width: 40px;
+	height: 40px;
+}
+
+#wiklogo {
+	width: 120px;
+	height: 140px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #000;
+    font-weight: normal;
+}
+
+h1 {
+	font-family: "Linux Libertine",Georgia,Times,serif;
+	font-size: 1.8em;
+	line-height: 1.3;
+}
+
+h2 {
+	font-family: "Linux Libertine",Georgia,Times,serif;
+	font-size: 1.5em;
+	line-height: 1.3;
+}
+
+a {
+	color: #0645AD;
+	text-decoration: none;
+}
+
+a:hover, a:focus {
+	text-decoration: underline;
+}
+
+#toc .toctoggle, .toc .toctoggle {
+    font-size: 94%;
+}
+
+.tocintro h2, .tocintro p {
+	display: inline;
+}
