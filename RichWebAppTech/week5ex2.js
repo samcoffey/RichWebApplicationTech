@@ -7,7 +7,8 @@ function getCelsius() {
         return false;
     }
     
-    var cAnswer = fvalue * 9 / 5 + 32;
+    var cAnswer = (fvalue - 32) * 5 / 9;
+    cAnswer = Math.round(10*cAnswer)/10;
     cfield.value = cAnswer;
 }
 
@@ -20,6 +21,7 @@ function getFahrenheit() {
         return false;
     }
     
-    var fAnswer = (cvalue - 32) * 5 / 9;
+    var fAnswer = cvalue * 9 / 5 + 32;
+    fAnswer = Math.round(10*fAnswer)/10;
     ffield.value = fAnswer;
 }
