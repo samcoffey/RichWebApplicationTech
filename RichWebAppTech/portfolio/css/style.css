@@ -81,6 +81,28 @@ p {
 	float: left;
 }
 
+.left_image {
+	float: left;
+	height: 75px;
+	margin: 5px;
+	margin-right: 10px;
+}
+
+.right_image {
+	float: right;
+	height: 75px;
+	margin: 5px;
+	margin-left: 10px;
+}
+
+.title_pic {
+	height: 100px;
+}
+
+#interests > h3, h2 {
+	clear:both;
+}
+
 @media all and (max-width: 800px) {
 	.navigation {
 		justify-content: space-around;
