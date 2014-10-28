@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<style>
+body {
+	margin: 50%;
+}
+</style>
+</head>
+<body>
+
+<canvas id="c"></canvas>
+
+<script>
+	var c = document.getElementById("c");
+	var ctx = c.getContext("2d");
+	c.height = window.innerHeight;
+	c.width = window.innerWidth;
+	
+	var text ="它们在传统上不被术语「可废止推理」所覆盖";
+	text = text.split(""); //get single chars from text
+	var callFontSize = 15;
+	var columns = (c.width / callFontSize); //columns in our matrix canvas
+	var drop = []; //declaration of empty array
+	for (var x= 0; x < columns; x++) {
+		drop[x] = 1; //1 is the y coordinate
+	}
+	
+	function draw() {
+		ctx.fillStyle = rgba(0, 0, 0, 0.2);
+		ctx.fillRect(0, 0, c.width, c.height); //From left top corner
+		ctx.font = callFontSize + "px arial";
+		ctx.fillStyle = "#0F0";
+		
+		for(var i = 0; i < drop.length; i++) {
+			var randomIndex = Math.floor(Math.random() * text.length);
+			var randomCharToDisplay = text[randomIndex];
+			
+			var xCoord = (i * callFontSize);
+			var yCoord = (drop[i] * callFontSize);
+			ctx.fillText(randomCharToDisplay, xCoord, yCoord);
+			
+			drop[i] ++; //y coordinate
+			
+			if ((drop[i] * colFontSize) > c.height && Math.random() > 0.95) {
+				drop[i] = 0;
+			}
+		}
+	}
+	
+	setInterval(draw, 33);
+	draw();
+	
+</script>
+</body>
+</html>
