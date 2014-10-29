@@ -1,9 +1,4 @@
 body {
-	/* background-image: url("../images/redandblackbackground.jpg");
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover; */
 	background: #4F7EFF;
 }
 
@@ -63,7 +58,6 @@ p {
 }
 
 .copyright {
-	/* font-size: 75%; */
 	color: grey;
 	float: right;
 	text-align: left;
@@ -110,6 +104,22 @@ p {
 	clear: both;
 }
 
+.skill_header > h3 {
+	display: inline;
+}
+
+.hide {
+	display:none;
+}
+
+.skill_type > ul {
+	display:none;
+}
+
+.skill_type {
+	margin-bottom: 10px;
+}
+
 @media all and (max-width: 800px) {
 	.navigation {
 		justify-content: space-around;
@@ -117,6 +127,7 @@ p {
 	}
 	.title>h1 {
 		float: left;
+		font-size: 135%;
 	}
 }
 
@@ -141,5 +152,14 @@ p {
 	}
 	.copyright {
 		font-size: 90%;
+	}
+	.title>h1 {
+		font-size: 100%;
+	}
+	.title_pic {
+		height: 80px;
+	}
+	.skill_header>h3 {
+		font-size: 95%;
 	}
 }
