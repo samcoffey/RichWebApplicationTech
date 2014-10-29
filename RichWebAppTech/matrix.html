@@ -1,57 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <style>
 body {
-	margin: 50%;
+	margin: 00;
 }
 </style>
+
 </head>
 <body>
+	<canvas id="c"></canvas>
 
-<canvas id="c"></canvas>
+	<script>
+		//The <canvas> element by itself is an invisible block of space, by default 300×150 pixels (in all browsers):
+		//So now we’ve got a blank canvas in front of us. To draw, we need the drawing context, which we can get using JavaScript. Once we have the context, we can draw abominations to our hearts’ content:
 
-<script>
-	var c = document.getElementById("c");
-	var ctx = c.getContext("2d");
-	c.height = window.innerHeight;
-	c.width = window.innerWidth;
-	
-	var text ="它们在传统上不被术语「可废止推理」所覆盖";
-	text = text.split(""); //get single chars from text
-	var callFontSize = 15;
-	var columns = (c.width / callFontSize); //columns in our matrix canvas
-	var drop = []; //declaration of empty array
-	for (var x= 0; x < columns; x++) {
-		drop[x] = 1; //1 is the y coordinate
-	}
-	
-	function draw() {
-		ctx.fillStyle = rgba(0, 0, 0, 0.2);
-		ctx.fillRect(0, 0, c.width, c.height); //From left top corner
-		ctx.font = callFontSize + "px arial";
-		ctx.fillStyle = "#0F0";
-		
-		for(var i = 0; i < drop.length; i++) {
-			var randomIndex = Math.floor(Math.random() * text.length);
-			var randomCharToDisplay = text[randomIndex];
-			
-			var xCoord = (i * callFontSize);
-			var yCoord = (drop[i] * callFontSize);
-			ctx.fillText(randomCharToDisplay, xCoord, yCoord);
-			
-			drop[i] ++; //y coordinate
-			
-			if ((drop[i] * colFontSize) > c.height && Math.random() > 0.95) {
-				drop[i] = 0;
+		var c = document.getElementById("c");
+		var ctx = c.getContext("2d"); //The 2D drawing API - part of the HTML5 specification
+
+		//making the canvas full screen
+		c.height = window.innerHeight;
+		c.width = window.innerWidth;
+
+		//text 
+		var text = "可废止推理是对推理形式的研究，它尽管令人信服，却不如演绎推理那么形式化和严格。它已经在哲学中，和最近在人工智能中讨论过了。其他演绎推理的替代者包括归纳推理和逆推推理。它们在传统上不被术语「可废止推理」所覆盖";
+		//converting the string of text into an array of single text
+		text = text.split("");
+		var colFontSize = 20;
+		//number of columns for the rain
+		var columns = Math.floor(c.width / colFontSize);
+
+		//an array of drops - one per column
+		var drops = [];
+		//x below is the x coordinate
+		//1 = y co-ordinate of the drop(same for every drop initially)
+		for (var x = 0; x < columns; x++)
+			drops[x] = 1;
+
+		//drawing the characters
+		function draw() {
+			//An RGBA color value is specified with: rgba(red, green, blue, alpha). 
+			//The alpha parameter is a number between 0.0 (fully transparent) and 1.0 (fully opaque).
+			//translucent BG to show trail
+			ctx.fillStyle = "rgba(0, 0, 0, 0.05)"; //set color before drawing the rectangle
+			ctx.fillRect(0, 0, c.width, c.height); //create a rectangle, with x, y, coordinated and width and height
+			ctx.font = colFontSize + "px arial";
+			ctx.fillStyle = "#0F0"; //green text
+
+			//looping over drops (columns)
+			for (var i = 0; i < drops.length; i++) {
+				//a random char to print
+				var randomIndex = Math.floor(Math.random() * text.length);
+				var randomCharToDisplay = text[randomIndex];
+
+				var xCord = (i * colFontSize); // the x coordinate is 
+				var yCord = (drops[i] * colFontSize);
+				ctx.fillText(randomCharToDisplay, xCord, yCord);
+
+				//sending the drop back to the top randomly after it has crossed the screen
+				//adding a randomness to the reset to make the drops scattered on the Y axis
+				if (drops[i] * colFontSize > c.height&&  Math.random() > 0.97)
+					drops[i] = 0;
+
+				//incrementing Y coordinate
+				drops[i]++;
 			}
 		}
-	}
-	
-	setInterval(draw, 33);
-	draw();
-	
-</script>
+		//a function that takes another function and a delay time in milliseconds
+		setInterval(draw, 50); 
+		//draw();
+	</script>
 </body>
 </html>
