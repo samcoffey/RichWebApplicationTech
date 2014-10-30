@@ -4,9 +4,8 @@
  * Date: 29th October 2014
  * Description: This style sheet contains CSS3 for my portfolio web application.
  */
-
 body {
-	background: #4F7EFF;
+	background: #1E90FF;
 }
 
 p {
@@ -42,7 +41,7 @@ p {
 	margin-right: auto;
 	padding: 5px;
 	background: white;
-	max-width: 900px;
+	max-width: 550px;
 	border: 2px solid;
 	border-radius: 25px;
 	overflow: auto;
@@ -111,20 +110,50 @@ p {
 	clear: both;
 }
 
-.skill_header > h3 {
+.skill_header>h3 {
 	display: inline;
 }
 
 .hide {
-	display:none;
+	display: none;
 }
 
-.skill_type > ul {
-	display:none;
+.skill_type>ul {
+	display: none;
 }
 
 .skill_type {
 	margin-bottom: 10px;
+}
+
+th, tr {
+	background-color: white;
+	font-size: 80%;
+}
+
+.c_img {
+	float: right;
+	border-left: white;
+	border-left-style: groove;
+}
+
+table, td, th {
+	border: 1px solid black;
+}
+
+.colour_changer {
+	position: absolute;
+	right: 8px;
+	top: 70px;
+}
+
+.c_link {
+	color: black;
+	text-decoration: none;
+}
+
+.top_row {
+	display: none;
 }
 
 @media all and (max-width: 800px) {
@@ -135,6 +164,28 @@ p {
 	.title>h1 {
 		float: left;
 		font-size: 135%;
+	}
+	.colour_changer {
+		position: initial;
+		margin-top: 10px;
+		margin-left: auto;
+		margin-right: auto;
+		padding: 5px;
+		background: white;
+		max-width: 550px;
+		border: 2px solid;
+		border-radius: 25px;
+		overflow: auto;
+		min-height: 30px;
+	}
+	.top_row {
+		display: table-cell;
+	}
+	.colour_row {
+		display: none;
+	}
+	.colour_table {
+		margin: 0 auto;
 	}
 }
 
