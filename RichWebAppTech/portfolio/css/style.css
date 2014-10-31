@@ -167,10 +167,12 @@ th {
 		max-width: 97%
 	}
 	
-	/* CSS to display the contents of the nav bar evenly accross the page */
+	/* CSS to display the contents of the nav bar evenly accross the page and shrink font size 
+	to fit*/
 	.navigation {
 		justify-content: space-around;
 		text-align: center;
+		font-size: 92%;
 	}
 	
 	/* CSS to move the title to the left and reduce the font size */
@@ -207,8 +209,11 @@ th {
 
 /* CSS for mobile devices */
 @media all and (max-width: 600px) {
+	/* CSS to adjust navbar to display in a column with borders between elements. Font size 
+	increased again as allowed */
 	.navigation {
 		padding: 0;
+		font-size: 100%;
 	}
 	.navigation a {
 		text-align: center;
