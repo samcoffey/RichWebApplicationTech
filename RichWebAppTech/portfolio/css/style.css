@@ -99,7 +99,7 @@ p {
 	height: 100px;
 }
 
-.title {
+.title, #experience, #interests {
 	border-bottom: white;
 	border-bottom-style: groove;
 	border-bottom-width: thick;
@@ -126,19 +126,24 @@ p {
 	margin-bottom: 10px;
 }
 
-th, tr {
-	background-color: white;
-	font-size: 80%;
+td, th, table {
+	background-color: deepskyblue;
+	color: white;
+	font-size: 90%;
+}
+
+td, th {
+	border: 1px solid white;
+}
+
+th {
+	text-align: center;
 }
 
 .c_img {
 	float: right;
 	border-left: white;
 	border-left-style: groove;
-}
-
-table, td, th {
-	border: 1px solid black;
 }
 
 .colour_changer {
@@ -148,7 +153,12 @@ table, td, th {
 }
 
 .c_link {
-	color: black;
+	color: white;
+	text-decoration: none;
+}
+
+.show, .hide {
+	color: blue;
 	text-decoration: none;
 }
 
@@ -156,6 +166,7 @@ table, td, th {
 	display: none;
 }
 
+/* CSS for tablet devices */
 @media all and (max-width: 800px) {
 	.navigation {
 		justify-content: space-around;
@@ -189,6 +200,7 @@ table, td, th {
 	}
 }
 
+/* CSS for mobile devices */
 @media all and (max-width: 600px) {
 	.navigation {
 		padding: 0;
