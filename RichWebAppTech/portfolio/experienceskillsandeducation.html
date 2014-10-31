@@ -24,7 +24,7 @@ skills can be hidden or shown using JavaScript.
 		<nav>
 			<ul class="navigation">
 				<li><a href="index.html">Home</a></li>
-				<li><a href="#">Experience & Skills</a></li>
+				<li><a href="#">Experience, Skills & Education</a></li>
 				<li><a href="interestshonoursandawards.html">Interests,
 						Honours & Awards</a></li>
 			</ul>
@@ -38,12 +38,12 @@ skills can be hidden or shown using JavaScript.
 					<img class="title_pic" src="images/skills-icon.jpg"
 						alt="Skills icon" />
 				</div>
-				<h1>Experience & Skills</h1>
+				<h1>Experience, Skills & Education</h1>
 			</section>
 		</div>
 
 		<div class="main_content">
-			<section id="main_ex_and_skills">
+			<section id="main_ex_skills_and_edu">
 				<article id="experience">
 					<h2>Experience</h2>
 					<h3>Software Engineering Intern - MasterCard</h3>
@@ -75,11 +75,17 @@ skills can be hidden or shown using JavaScript.
 				</article>
 				<article id="skills_article">
 					<h2>Skills</h2>
+					<!-- Details of each skill type can be shown with JavaScript and clicking a 
+					"Show" link.  They can then be hidden by clicking a "Hide" link. "Show" or 
+					"Hide" will be displayed depending on which one has been clicked. "Show" is 
+					visible by default. "; return false;" stops page from returning to top. -->
 					<div class="skill_type" id="pl_skills">
 						<div class="skill_header">
 							<h3>Programming Languages</h3>
-							<a href="#" class="show" onclick="show_skills(pl_skills)">[Show]</a>
-							<a href="#" class="hide" onclick="hide_skills(pl_skills)">[Hide]</a>
+							<a href="#" class="show"
+								onclick="show_skills(pl_skills); return false;">[Show]</a> <a
+								href="#" class="hide"
+								onclick="hide_skills(pl_skills); return false;">[Hide]</a>
 						</div>
 						<ul class="skills_list">
 							<li>C</li>
@@ -91,8 +97,10 @@ skills can be hidden or shown using JavaScript.
 					<div class="skill_type" id="wd_skills">
 						<div class="skill_header">
 							<h3>Web Development Languages</h3>
-							<a href="#" class="show" onclick="show_skills(wd_skills)">[Show]</a>
-							<a href="#" class="hide" onclick="hide_skills(wd_skills)">[Hide]</a>
+							<a href="#" class="show"
+								onclick="show_skills(wd_skills); return false;">[Show]</a> <a
+								href="#" class="hide"
+								onclick="hide_skills(wd_skills); return false;">[Hide]</a>
 						</div>
 						<ul class="skills_list">
 							<li>HTML</li>
@@ -104,8 +112,10 @@ skills can be hidden or shown using JavaScript.
 					<div class="skill_type" id="fr_skills">
 						<div class="skill_header">
 							<h3>Frameworks</h3>
-							<a href="#" class="show" onclick="show_skills(fr_skills)">[Show]</a>
-							<a href="#" class="hide" onclick="hide_skills(fr_skills)">[Hide]</a>
+							<a href="#" class="show"
+								onclick="show_skills(fr_skills); return false;">[Show]</a> <a
+								href="#" class="hide"
+								onclick="hide_skills(fr_skills); return false;">[Hide]</a>
 						</div>
 						<ul class="skills_list">
 							<li>Spring</li>
@@ -115,8 +125,10 @@ skills can be hidden or shown using JavaScript.
 					<div class="skill_type" id="db_skills">
 						<div class="skill_header">
 							<h3>Database Development</h3>
-							<a href="#" class="show" onclick="show_skills(db_skills)">[Show]</a>
-							<a href="#" class="hide" onclick="hide_skills(db_skills)">[Hide]</a>
+							<a href="#" class="show"
+								onclick="show_skills(db_skills); return false;">[Show]</a> <a
+								href="#" class="hide"
+								onclick="hide_skills(db_skills); return false;">[Hide]</a>
 						</div>
 						<ul class="skills_list">
 							<li>Oracle SQL</li>
@@ -126,8 +138,10 @@ skills can be hidden or shown using JavaScript.
 					<div class="skill_type" id="sc_skills">
 						<div class="skill_header">
 							<h3>Source Control</h3>
-							<a href="#" class="show" onclick="show_skills(sc_skills)">[Show]</a>
-							<a href="#" class="hide" onclick="hide_skills(sc_skills)">[Hide]</a>
+							<a href="#" class="show"
+								onclick="show_skills(sc_skills); return false;">[Show]</a> <a
+								href="#" class="hide"
+								onclick="hide_skills(sc_skills); return false;">[Hide]</a>
 						</div>
 						<ul class="skills_list">
 							<li>GIT</li>
@@ -137,8 +151,10 @@ skills can be hidden or shown using JavaScript.
 					<div class="skill_type" id="ide_skills">
 						<div class="skill_header">
 							<h3>IDE Skills</h3>
-							<a href="#" class="show" onclick="show_skills(ide_skills)">[Show]</a>
-							<a href="#" class="hide" onclick="hide_skills(ide_skills)">[Hide]</a>
+							<a href="#" class="show"
+								onclick="show_skills(ide_skills); return false;">[Show]</a> <a
+								href="#" class="hide"
+								onclick="hide_skills(ide_skills); return false;">[Hide]</a>
 						</div>
 						<ul class="skills_list">
 							<li>Eclipse</li>
@@ -146,32 +162,59 @@ skills can be hidden or shown using JavaScript.
 						</ul>
 					</div>
 				</article>
+				<article id="education">
+					<h2>Education</h2>
+					<h3>BSc (Hons) Computer Science (In progress) - Dublin
+						Institute of Technology</h3>
+					<h4>
+						<time datetime="2011-09-16">September 2011</time> - 
+						<time datetime="2015-05-20">May 2015</time>
+						(Expected)
+					</h4>
+					<h3>Certified Insurance Practitioner - Insurance Institute of
+						Ireland</h3>
+					<h4>
+						<time datetime="2006-09-16">September 2006</time> - 
+						<time datetime="2009-05-16">March 2009</time>
+
+					</h4>
+					<h3>Leaving Certificate - CBS Thurles</h3>
+					<h4>
+						<time datetime="1994-09-01">September 1994</time> - 
+						<time datetime="2000-06-20">June 2000</time>
+					</h4>
+				</article>
 			</section>
 		</div>
 	</div>
 
+	<!-- This table contains 2 rows & 2 columns which are the same. The duplicated rows or 
+	columns will be hidden depending on screen size. "; return false;" stops page from 
+	returning to top. -->
 	<div class="colour_changer">
 		<aside>
 			<table class="colour_table">
 				<tr class="colour_header">
 					<th>Background</th>
 					<td class="top_row"><a href="#" class="c_link"
-						onclick="change_background('#1E90FF')">Dodger Blue<img
-							src="images/dodger_blue.png" class="c_img"
-							alt="Dodger blue image" /></a></td>
+						onclick="change_background('#1E90FF'); return false;">Dodger
+							Blue<img src="images/dodger_blue.png" class="c_img"
+							alt="Dodger blue image" />
+					</a></td>
 					<td class="top_row"><a href="#" class="c_link"
-						onclick="change_background('#DC143C')">Crimson<img
+						onclick="change_background('#DC143C'); return false;">Crimson<img
 							src="images/crimson.png" class="c_img" alt="Crimson image" /></a></td>
 				</tr>
 				<tr class="colour_row">
 					<td><a href="#" class="c_link"
-						onclick="change_background('#1E90FF')">Dodger Blue<img
-							src="images/dodger_blue.png" class="c_img"
-							alt="Dodger blue image" /></a></td>
+						onclick="change_background('#1E90FF'); return false;">Dodger
+							Blue<img src="images/dodger_blue.png" class="c_img"
+							alt="Dodger blue image" />
+					</a></td>
 				</tr>
 				<tr class="colour_row">
 					<td><a href="#" class="c_link"
-						onclick="change_background('#DC143C')">Crimson<img
+						onclick="change_background('#DC143C'); return false;">Crimson<img
 							src="images/crimson.png" class="c_img" alt="Crimson image" /></a></td>
 				</tr>
 			</table>
@@ -181,11 +224,12 @@ skills can be hidden or shown using JavaScript.
 	<div class="center_wrapper">
 		<footer>
 			<div class="footer_images">
+				<!-- These links are for verifying the HTML5 and CSS conform to W3C standards -->
 				<a class="verifier"
 					href="http://jigsaw.w3.org/css-validator/validator?uri=http://lucalongo.eu/courses/2014-2015/RichWebApplicationTechnology/students/C11749921/portfolio/css/style.css&amp;profile=css3"><img
 					src="images/css_validated.png" alt="css validator" /></a> <a
 					class="verifier"
-					href="http://validator.w3.org/check?uri=http://lucalongo.eu/courses/2014-2015/RichWebApplicationTechnology/students/C11749921/portfolio/experienceandskills.html">
+					href="http://validator.w3.org/check?uri=http://lucalongo.eu/courses/2014-2015/RichWebApplicationTechnology/students/C11749921/portfolio/experienceskillsandeducation.html">
 					<img src="images/html5_validated.png" alt="html5 validator" />
 				</a>
 			</div>

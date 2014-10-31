@@ -4,72 +4,78 @@
  * Date: 29th October 2014
  * Description: This style sheet contains CSS3 for my portfolio web application.
  */
+ 
+/* CSS for standard background colour, text and text colour for the page */
 body {
 	background: #1E90FF;
+	font-family: Georgia, serif;
+	color: #1E1F1D;
 }
 
+/* CSS justifying words in paragraphs */
 p {
 	text-align: justify;
 	text-justify: inter-word;
 }
 
+/* CSS for nav bar */
 .navigation {
 	list-style: none;
 	margin: 0;
 	background: deepskyblue;
 	text-align: right;
 }
-
 .navigation a {
 	text-decoration: none;
 	display: block;
 	padding: 1em;
 	color: white;
 }
-
 .navigation>li {
 	display: inline-block;
 }
-
 .navigation a:hover {
 	background: #00B6EF;
 }
 
+/* CSS for central main body divs */
 .center_wrapper {
 	margin-top: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	padding: 5px;
 	background: white;
-	max-width: 550px;
+	max-width: 72%;
 	border: 2px solid;
 	border-radius: 25px;
 	overflow: auto;
 	min-height: 30px;
 }
 
+/* CSS for title section */
 .title>h1 {
 	float: right;
 	text-align: center;
 	width: 33%;
-	font-family: Georgia, serif;
 	font-size: 150%;
 }
-
 .pic_div {
 	float: right;
 	width: 33%;
 	text-align: right;
 	padding: 5px;
 }
+.title_pic {
+	height: 100px;
+}
 
+/* CSS for footer section */
 .copyright {
 	color: grey;
 	float: right;
 	text-align: left;
 	width: 50%;
 }
-
 .footer_images {
 	float: right;
 	text-align: right;
@@ -77,17 +83,13 @@ p {
 	padding-top: 9px;
 }
 
-.main_content {
-	float: left;
-}
-
+/* CSS for images which are alternatively displayed on left and right in interests section */
 .left_image {
 	float: left;
 	height: 75px;
 	margin: 5px;
 	margin-right: 10px;
 }
-
 .right_image {
 	float: right;
 	height: 75px;
@@ -95,87 +97,90 @@ p {
 	margin-left: 10px;
 }
 
-.title_pic {
-	height: 100px;
-}
-
-.title, #experience, #interests {
+/* CSS for bottom border after various sections */
+.title, #experience, #interests, #skills_article {
 	border-bottom: white;
 	border-bottom-style: groove;
 	border-bottom-width: thick;
 	overflow: auto;
 }
 
+/* CSS to clear the float left or right properties */
 #interests>h3, h2 {
 	clear: both;
 }
 
+/* CSS for skills section - hiding element by default etc. */
 .skill_header>h3 {
 	display: inline;
 }
-
 .hide {
 	display: none;
 }
-
 .skill_type>ul {
 	display: none;
 }
-
 .skill_type {
 	margin-bottom: 10px;
 }
-
-td, th, table {
-	background-color: deepskyblue;
-	color: white;
-	font-size: 90%;
-}
-
-td, th {
-	border: 1px solid white;
-}
-
-th {
-	text-align: center;
-}
-
-.c_img {
-	float: right;
-	border-left: white;
-	border-left-style: groove;
-}
-
-.colour_changer {
-	position: absolute;
-	right: 8px;
-	top: 70px;
-}
-
-.c_link {
-	color: white;
-	text-decoration: none;
-}
-
 .show, .hide {
 	color: blue;
 	text-decoration: none;
 }
 
+/* CSS for table */
+td, th, table {
+	background-color: deepskyblue;
+	color: white;
+	font-size: 86%;
+}
+td, th {
+	border: 1px solid white;
+}
+th {
+	text-align: center;
+}
 .top_row {
 	display: none;
 }
 
+/* CSS for colour changer */
+.c_img {
+	float: right;
+	border-left: white;
+	border-left-style: groove;
+}
+.colour_changer {
+	position: absolute;
+	right: 8px;
+	top: 70px;
+}
+.c_link {
+	color: white;
+	text-decoration: none;
+}
+
 /* CSS for tablet devices */
 @media all and (max-width: 800px) {
+	/* CSS to increase the size of the centre div proportionately to the size of the window */
+	.center_wrapper {
+		max-width: 97%
+	}
+	
+	/* CSS to display the contents of the nav bar evenly accross the page */
 	.navigation {
 		justify-content: space-around;
 		text-align: center;
 	}
+	
+	/* CSS to move the title to the left and reduce the font size */
 	.title>h1 {
 		float: left;
 		font-size: 135%;
 	}
+	
+	/* CSS for colour changer table to display in normal centre div and display 1 row instead of
+	one column */
 	.colour_changer {
 		position: initial;
 		margin-top: 10px;
@@ -183,7 +188,7 @@ th {
 		margin-right: auto;
 		padding: 5px;
 		background: white;
-		max-width: 550px;
+		max-width: 97%;
 		border: 2px solid;
 		border-radius: 25px;
 		overflow: auto;
@@ -217,6 +222,8 @@ th {
 	.navigation li:last-of-type a {
 		border-bottom: none;
 	}
+	
+	/* CSS to shrink various content to fit better on mobile device */
 	.verifier>img {
 		width: 61px;
 	}
@@ -230,6 +237,6 @@ th {
 		height: 80px;
 	}
 	.skill_header>h3 {
-		font-size: 95%;
+		font-size: 81%;
 	}
 }
