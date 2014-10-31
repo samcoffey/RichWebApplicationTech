@@ -45,7 +45,7 @@ p {
 	margin-right: auto;
 	padding: 5px;
 	background: white;
-	max-width: 72%;
+	max-width: 64%;
 	border: 2px solid;
 	border-radius: 25px;
 	overflow: auto;
@@ -132,7 +132,6 @@ p {
 td, th, table {
 	background-color: deepskyblue;
 	color: white;
-	font-size: 86%;
 }
 td, th {
 	border: 1px solid white;
@@ -151,9 +150,13 @@ th {
 	border-left-style: groove;
 }
 .colour_changer {
-	position: absolute;
+	position: fixed;
 	right: 8px;
 	top: 70px;
+	padding: 4px;
+	background: white;
+	border: 2px solid;
+	border-radius: 10px;
 }
 .c_link {
 	color: white;
@@ -189,11 +192,8 @@ th {
 		margin-left: auto;
 		margin-right: auto;
 		padding: 5px;
-		background: white;
 		max-width: 97%;
-		border: 2px solid;
 		border-radius: 25px;
-		overflow: auto;
 		min-height: 30px;
 	}
 	.top_row {
@@ -243,5 +243,8 @@ th {
 	}
 	.skill_header>h3 {
 		font-size: 81%;
+	}
+	td, th, table {
+		font-size: 86%;
 	}
 }
