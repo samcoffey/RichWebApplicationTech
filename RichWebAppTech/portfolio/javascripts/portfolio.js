@@ -24,3 +24,8 @@ function hide_skills(div) {
 	var skills = div.getElementsByClassName("skills_list")[0];
 	skills.style.display = "none";
 }
+
+//Function to change the background colour when c_link link is clicked
+function change_background(new_colour) {
+	document.body.style.background = new_colour;
+}
