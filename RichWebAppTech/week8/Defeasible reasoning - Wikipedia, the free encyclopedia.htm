@@ -605,8 +605,7 @@
 		
 		$("section")
 				.prepend(
-						"<button type='button' class='open_close' value='close'>Close ", $(this)
-						.contents().find('h1').html(), "</button>");
+						"<button type='button' class='open_close' value='close'>Close</button>");
 		$(".open_close").click(function() {
 			if ($(this).attr("value") == "close") {
 				$(this).parent().children().hide();
