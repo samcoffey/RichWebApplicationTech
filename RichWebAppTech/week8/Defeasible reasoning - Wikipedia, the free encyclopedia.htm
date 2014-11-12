@@ -659,6 +659,15 @@
 				$(this).parent().children().show();
 			}
 		});
+		
+		/* 
+		Part of Luca's solution - He is going to put it up on his website
+		
+		jQuery.each($("section"), function(i, val) {
+			var sectionTitle =$(this).find("h1").text();
+			$(val).attr('id', 'sec_' + i);
+			$(val).before("<button id-'btn' + i + " style='display:block;')>Close "
+		} */
 	</script>
 
 </body>
