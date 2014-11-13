@@ -12,15 +12,20 @@
         </div>
 
         <div id="content">
+        	<ul id="students"></ul> <!-- Added by sc -->
         </div>
 
         <!-- Templates -->
         <script type="text/template" id="nationality-item-template">
-            <a href="#nationalities/<%= id %>"><%= description %></a>
+            <a href="#nationalities/students/<%= id %>"><%= description %></a>
         </script>
 
         <script type="text/template" id="nationality-detail-template">
             <h2><%= description %></h2>
+        </script>
+        
+        <script type="text/template" id="studentsOfNationality-detail-template">
+            <div>Age: <%=age%> Nationality: <%=id_nationality%> Id: <%=student_number%></div>
         </script>
 
         <!-- JavaScript -->
