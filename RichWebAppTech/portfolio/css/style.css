@@ -150,7 +150,7 @@ th {
 	border-left-style: groove;
 }
 .colour_changer {
-	position: fixed;
+	position: absolute;
 	right: 8px;
 	top: 70px;
 	padding: 4px;
