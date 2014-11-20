@@ -13,28 +13,6 @@ var AppRouter = Backbone.Router.extend({
 		"nationalities" : "nationalities",
 		"nationalities/:id" : "nationalities",
 		"nationalities/students/:id" : "studentsOfNationality",
-		"questionnaires/student/:id" : "questionnairesOfaStudent"
-	},
-	
-	questionnairesOfaStudent : function(studentID) {
-		var questionnairesOfaStudent = new QuestionnairesOfaStudentCollection(
-			[],	
-			studentID
-		);
-		
-		questionnairesOfaStudent.fetch({
-			success : function(){
-				var questionnairesOfStudentView = new QuestionnairesOfStudentView({
-					collection : questionnairesOfaStudent
-				});
-				
-				questionnairesOfStudentView.flush();
-				questionnairesOfStudentView.render();
-			},
-			error: function(){
-				alert("Cannot fetch collection");
-			}
-		});
 	},
 
 	nationalities : function(id) {
@@ -57,30 +35,34 @@ var AppRouter = Backbone.Router.extend({
 					var nationalityDetailView = new NationalityDetailView({
 						model : nationalitesCollection.get(id)
 					});
-
 					nationalityDetailView.render(); // render right column
-                    nationalityDetailView.pieChartRender();
+					// nationalityDetailView.pieChartRender();
 				}
 
 			}
 		});
 	},
-	
-	//Added by sc
+
 	studentsOfNationality : function(id) {
+
 		var studentsCollection = new StudentsCollection();
+		// var nationalitesCollection = new NationalitesCollection();
+
 		studentsCollection.fetch({
 			success : function() {
-				
+
+				// create view and pass collection
 				var studentsOfNationalityView = new StudentsOfNationalityView({
 					collection : studentsCollection
 				});
-				studentsOfNationalityView.flush();
-				studentsOfNationalityView.render(id);
+
+				studentsOfNationalityView.flush(); // empty left sidebar
+				studentsOfNationalityView.render(id); // render left sidebar
 			}
 		});
-		
+
 	}
+
 });
 
 // Base Url
@@ -89,7 +71,6 @@ var baseUrl = "http://www.lucalongo.eu/courses/2014-2015/questionnaireDIT/app/in
 // Base Model
 var BaseModel = Backbone.Model.extend();
 
-//Student Model - Added by sc - Automatically adds Id
 var StudentModel = Backbone.Model.extend({
 	model : BaseModel,
 	urlRoot : this.baseUrl + "/students"
@@ -101,19 +82,15 @@ var NationalitesCollection = Backbone.Collection.extend({
 	url : this.baseUrl + "/nationalities"
 });
 
-//Students Collection - Added by sc
+// students Collection
 var StudentsCollection = Backbone.Collection.extend({
 	model : BaseModel,
 	url : this.baseUrl + "/students"
 });
 
-var QuestionnairesOfaStudentCollection = Backbone.Collection.extend({
-	model : BaseModel,
-	
-	initialize: function(model, options){
-		this.url = this.baseUrl + "/questionnaires/student/" + options.id;
-	},
-});
+/**
+ * VIEWS
+ */
 
 // Nationalites List View (nationalites navigation)
 var NationalitesListView = Backbone.View.extend({
@@ -166,67 +143,43 @@ var NationalityDetailView = Backbone.View.extend({
 		// add here html to display
 		this.$content.html(this.template(this.model.toJSON()));
 		return this;
-	},
-
-	pieChartRender : function(model) {
-		// Render pie chart
 	}
 });
 
-//Student Detail View (student detail) - Added by SC
+// Students with a certain nationality View (nationality detail)
 var StudentsOfNationalityView = Backbone.View.extend({
 
 	$content : $("#content"),
-
-	template : _.template($("#studentsOfNationality-detail-template").html()),
+	template : _.template($("#studentOfNationality-detail-template").html()),
 
 	render : function(idNationality) {
-		// this collections models conincides with the list of objects in the collection
+		// this collections models coincides with the list of objects in the collection
 		var self = this;
 		var template = this.template;
 		_.each(this.collection.models, function(model) {
 			var studentID = model.toJSON().id;
 			
-			//Setting a student Model
+			//setting a student model
 			var student = new StudentModel({
 				id : studentID
 			});
-			
-			//The fetch below will perform GET ../student/studentID
+
+			// The fetch below will perform GET .../student/studentID
 			student.fetch({
 				success : function(s) {
-					if(s.toJSON().id_nationality == idNationality) {
+					if (s.toJSON().id_nationality ==  idNationality) {
 						self.$content.append(template(s.toJSON()));
 					}
 				}
 			});
-		});
 
+		});
 	},
 
 	flush : function() {
 		this.$content.empty(); // jquery method
-	},
-	
-	pieChartRender : function(model) {
-		// Render pie chart
 	}
-});
 
-var QuestionnairesOfStudentView = Backbone.View.extend({
-	$content: $("#detail"),
-	
-	render : function(){
-		var self = this;
-		_.each(this.collection.models,function(questionnaire){
-			console.log(questionnaire.toJSON);
-			self.$content.append(questionnaire.toJSON().id + "<br>");
-		});
-	},
-	
-	flush : function(){
-		this.$content.empty();
-	}
 });
 
 // Init the App Router
