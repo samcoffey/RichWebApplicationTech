@@ -1,0 +1,94 @@
+body {
+	position: relative;
+	z-index: -2;
+}
+
+.main:before {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	z-index: -1;
+	content: '';
+}
+
+.site-header-wrap {
+	margin-bottom: 60px;
+	border-bottom: 1px solid #cd9ad6;
+}
+
+.accordion, .accordion * {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+.accordion {
+	overflow: hidden;
+	box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+	border-radius: 3px;
+	background: #f7f7f7;
+}
+
+.accordion-section-title {
+	width: 100%;
+	padding: 15px;
+	display: inline-block;
+	border-bottom: 1px solid #1a1a1a;
+	background: #333;
+	transition: all linear 0.15s;
+	font-size: 1.200em;
+	text-shadow: 0px 1px 0px #1a1a1a;
+	color: #fff;
+}
+
+.accordion-section-title.active, .accordion-section-title:hover {
+	background: #4c4c4c;
+	text-decoration: none;
+}
+
+.accordion-section:last-child .accordion-section-title {
+	border-bottom: none;
+}
+
+.accordion-section-content {
+	padding: 15px;
+	display: none;
+}
+
+table, td, th
+{
+    border-color: #600;
+    border-style: solid;
+}
+
+table
+{
+    border-width: 0 0 1px 1px;
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td, th
+{
+    margin: 0;
+    padding: 4px;
+    border-width: 1px 1px 0 0;
+    background-color: #FFC;
+}
+
+th {
+	font-weight: bold;
+}
+
+#footer-panel {
+	margin-top: 30px;
+	border-top: 1px solid #cd9ad6;
+	border-bottom: 1px solid #cd9ad6;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	text-align: center;
+}

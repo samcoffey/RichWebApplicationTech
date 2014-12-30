@@ -13,7 +13,7 @@ var AppRouter = Backbone.Router
 			routes : {
 				"nationalities" : "nationalities",
 				"nationalities/:id" : "nationalities",
-				"nationalities/students/:id" : "studentsOfNationality",
+				"students/nationalities/:id" : "studentsOfNationality",
 				"questionnaires/student/:id" : "questionnairesOfaStudent"
 			},
 
@@ -95,7 +95,7 @@ var AppRouter = Backbone.Router
 		});
 
 // Base Url
-var baseUrl = "http://www.lucalongo.eu/courses/2014-2015/questionnaireDIT/app/index.php";
+var baseUrl = "http://lucalongo.eu:80/courses/2014-2015/questionnaireDIT/app/index.php";
 
 // Base Model
 var BaseModel = Backbone.Model.extend();

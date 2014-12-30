@@ -17,7 +17,7 @@
 
 	<!-- Templates -->
 	<script type="text/template" id="nationality-item-template">
-            <a href="#nationalities/students/<%= id %>"><%= description %></a>
+            <a href="#students/nationalities/<%= id %>"><%= description %></a>
         </script>
 
 	<script type="text/template" id="nationality-detail-template">
@@ -26,8 +26,8 @@
 
 	<script type="text/template" id="studentOfNationality-detail-template">
             <div>
-				<a href='#questionnaires/student/<%= student_number %>'> 
-					Age: <%= age %> Nationality: <%= id_nationality %> Id: <%= student_number %>
+				<a href='#questionnaires/student/<%= id %>'> 
+					Age: <%= age %> Nationality: <%= id_nationality %> Id: <%= id %>
 				</a>
 			</div>
         </script>

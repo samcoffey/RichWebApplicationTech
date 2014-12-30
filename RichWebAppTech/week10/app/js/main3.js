@@ -73,7 +73,7 @@ var AppRouter = Backbone.Router
 		});
 
 // Base Url
-var baseUrl = "http://www.lucalongo.eu/courses/2014-2015/questionnaireDIT/app/index.php";
+var baseUrl = "http://lucalongo.eu:80/courses/2014-2015/questionnaireDIT/app/index.php";
 
 // Base Model
 var BaseModel = Backbone.Model.extend();
@@ -139,20 +139,6 @@ var StudentsListItemView = Backbone.View.extend({
 
 	render : function() {
 		this.$el.html(this.template(this.model.toJSON()));
-		return this;
-	}
-});
-
-// Nationalites Detail View (nationality detail)
-var NationalityDetailView = Backbone.View.extend({
-
-	$content : $("#content"),
-
-	template : _.template($("#nationality-detail-template").html()),
-
-	render : function() {
-		// add here html to display
-		this.$content.html(this.template(this.model.toJSON()));
 		return this;
 	}
 });
